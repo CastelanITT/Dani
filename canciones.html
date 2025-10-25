@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>🎶 Canciones para ti 💕</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      background: linear-gradient(135deg, #f8bbd0, #c5cae9, #c8e6c9, #fff9c4);
+      background-size: 400% 400%;
+      animation: fondo 15s ease infinite;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      font-family: 'Poppins', sans-serif;
+      color: #4e342e;
+      text-align: center;
+    }
+    @keyframes fondo {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+    h1 {
+      font-family: 'Great Vibes', cursive;
+      font-size: 2.5em;
+      color: #ec407a;
+      margin-bottom: 30px;
+      text-shadow: 0 0 10px #fff;
+    }
+    .contenedor {
+      display: grid;
+      grid-template-columns: repeat(3, 180px);
+      grid-template-rows: repeat(2, 180px);
+      gap: 20px;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+    }
+    .cancion, .foto {
+      width: 180px;
+      height: 180px;
+      background: rgba(255,255,255,0.85);
+      border-radius: 15px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.2);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 1.1em;
+      color: #6d4c41;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: visible;
+    }
+    .cancion:hover, .foto:hover {
+      transform: scale(1.05);
+      background: #fff;
+      box-shadow: 0 0 20px rgba(255,182,193,0.8);
+      z-index: 10;
+    }
+    .texto {
+      opacity: 0;
+      pointer-events: none;
+      position: absolute;
+      left: 190px;
+      top: 0;
+      width: 220px;
+      height: 100%;
+      background: rgba(255, 255, 255, 0.95);
+      border-radius: 15px;
+      padding: 15px;
+      font-size: 0.9em;
+      color: #4e342e;
+      box-shadow: 0 0 15px rgba(0,0,0,0.2);
+      text-align: justify;
+      transition: opacity 0.3s ease, transform 0.3s ease;
+      transform: translateY(10px);
+    }
+    .cancion:hover .texto {
+      opacity: 1;
+      pointer-events: all;
+      transform: translateY(0);
+    }
+
+    /* Estilo para el cuadro con la foto */
+    .foto img {
+      width: 100%;
+      height: 100%;
+      border-radius: 15px;
+      object-fit: cover;
+      transition: transform 0.4s ease;
+    }
+    .foto:hover img {
+      transform: scale(1.08);
+      box-shadow: 0 0 15px rgba(255,182,193,0.8);
+    }
+
+    @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@400;600&display=swap');
+  </style>
+</head>
+<body>
+
+  <h1>🎵 Canciones que me recuerdan a ti 💕</h1>
+
+  <div class="contenedor">
+
+    <div class="cancion" onclick="window.open('https://youtu.be/GU0bHVi6VaY?list=PLPqV_a3MoHPMdFoMPSmvbdNHXH5ULkWNd', '_blank')">
+      <span>Call It What You Want</span>
+      <div class="texto">Esta canción representa mi enamoramiento en el momento más cotidiano de mi vida y que al final del año decidiste pasar conmigo ese año nuevo y ahora quiero que te quedes siempre conmigo.</div>
+    </div>
+
+    <div class="cancion" onclick="window.open('https://www.youtube.com/watch?v=akPRZ6gzGXk&list=RDakPRZ6gzGXk&start_radio=1', '_blank')">
+      <span>The Fate Of Ophelia</span>
+      <div class="texto">Realmente cambió la profecía, aquella que creí que me dejaría un largo tiempo... me salvaste del destino de Ophelia.</div>
+    </div>
+
+    <div class="cancion" onclick="window.open('https://youtu.be/cvTWc5OeYBA?list=RDcvTWc5OeYBA', '_blank')">
+      <span>Moonlight</span>
+      <div class="texto">La luna no tiene luz propia, solo es el reflejo del sol lo que la hace brillar... y tú eres esa luz que ilumina el amor que te tengo. Para mí, Moonlight 💫</div>
+    </div>
+
+    <div class="cancion" onclick="window.open('https://youtu.be/DSI75n07IrQ?list=RDDSI75n07IrQ', '_blank')">
+      <span>Imperfect For You</span>
+      <div class="texto">Cuando me dedicaste Afterglow no paré de pensar en esta canción... soy alguien imperfecto que realmente quiere ser tuyo, quien con todas mis imperfecciones buscará que te sientas amado. 💞</div>
+    </div>
+
+    <div class="cancion" onclick="window.open('https://youtu.be/J6pRD0eESA8?list=RDJ6pRD0eESA8', '_blank')">
+      <span>Camara</span>
+      <div class="texto">Una de mis favoritas de Sid. En cada palabra pienso en ti... donde cada momento queda capturado por nuestros ojos y corazones, guardados en un lugar donde siempre estaremos tranquilos y amados. Te amo. 💕</div>
+    </div>
+
+    <!-- 🩷 Cuadro especial con tu foto -->
+    <div class="foto">
+      <img src="mivida.jpg" alt="Nosotros 💕">
+    </div>
+
+  </div>
+
+</body>
+</html>

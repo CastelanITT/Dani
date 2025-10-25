@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>💖 Felices 5 meses mi niño 💖</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      height: 100vh;
+      overflow: hidden;
+      font-family: 'Poppins', sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      background: linear-gradient(135deg, #fce4ec, #fff9c4, #e1bee7, #b3e5fc);
+      background-size: 400% 400%;
+      animation: fondoIntro 15s ease infinite;
+    }
+
+    @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@400;600&display=swap');
+
+    @keyframes fondoIntro {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    h1 {
+      font-size: 3em;
+      color: #ff4081;
+      text-shadow: 0 0 20px #fff;
+      font-family: 'Great Vibes', cursive;
+      animation: aparecer 2s ease-in-out forwards;
+      text-align: center;
+    }
+
+    @keyframes aparecer {
+      from { opacity: 0; transform: scale(0.9); }
+      to { opacity: 1; transform: scale(1); }
+    }
+
+    button {
+      margin-top: 30px;
+      background: linear-gradient(135deg, #ff80ab, #ffb74d, #fff176);
+      border: none;
+      color: #fff;
+      padding: 12px 35px;
+      font-size: 1.2em;
+      border-radius: 25px;
+      cursor: pointer;
+      box-shadow: 0 0 15px rgba(255, 193, 7, 0.6);
+      transition: all 0.3s ease;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    button:hover {
+      transform: scale(1.1);
+      box-shadow: 0 0 25px rgba(255, 193, 7, 0.9);
+    }
+
+    /* segunda pantalla */
+    .pantalla-principal {
+      display: none;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg, #ffecb3, #f8bbd0, #c5cae9, #c8e6c9);
+      background-size: 400% 400%;
+      animation: fondoPrincipal 15s ease infinite;
+      height: 100vh;
+      width: 100vw;
+      position: absolute;
+      top: 0;
+      left: 0;
+      overflow: hidden;
+    }
+
+    @keyframes fondoPrincipal {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    .carta {
+      width: 200px;
+      height: 130px;
+      background: #fff8dc;
+      position: relative;
+      border: 2px solid #f4b400;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.2);
+      cursor: pointer;
+      transition: transform 0.5s ease;
+    }
+
+    .carta:hover { transform: scale(1.05); }
+
+    .carta::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 0;
+      height: 0;
+      border-left: 100px solid transparent;
+      border-right: 100px solid transparent;
+      border-bottom: 70px solid #ffd54f;
+      border-radius: 10px 10px 0 0;
+    }
+
+    .mensaje {
+      display: none;
+      width: 350px;
+      height: auto;
+      background: #fff;
+      border: 2px solid #ccc;
+      border-radius: 10px;
+      box-shadow: 0 0 25px rgba(0,0,0,0.2);
+      padding: 40px;
+      line-height: 1.6;
+      text-align: left;
+      color: #4e342e;
+      font-size: 1.1em;
+      animation: abrirCarta 1s ease forwards;
+    }
+
+    @keyframes abrirCarta {
+      from { transform: scale(0.8) rotateX(-90deg); opacity: 0; }
+      to { transform: scale(1) rotateX(0deg); opacity: 1; }
+    }
+
+    /* botón corazón */
+    .boton-corazon {
+      display: none;
+      margin-top: 25px;
+      font-size: 2.2em;
+      color: #e91e63;
+      cursor: pointer;
+      transition: transform 0.3s ease;
+    }
+
+    .boton-corazon:hover {
+      transform: scale(1.2);
+      text-shadow: 0 0 15px #ff80ab;
+    }
+
+    .flor {
+      position: absolute;
+      top: -50px;
+      font-size: 25px;
+      animation: caer 10s linear infinite;
+    }
+
+    @keyframes caer {
+      0% { transform: translateY(0) rotate(0deg); opacity: 1; }
+      100% { transform: translateY(100vh) rotate(360deg); opacity: 0; }
+    }
+
+    .corazon {
+      position: absolute;
+      color: #ec407a;
+      font-size: 20px;
+      animation: flotar 8s ease-in-out infinite;
+      opacity: 0.7;
+    }
+
+    @keyframes flotar {
+      0% { transform: translateY(0) scale(1); opacity: 0.7; }
+      50% { transform: translateY(-40px) scale(1.2); opacity: 1; }
+      100% { transform: translateY(0) scale(1); opacity: 0.7; }
+    }
+
+    audio { display: none; }
+  </style>
+</head>
+<body>
+
+  <div class="intro">
+    <h1>💖 Felices 5 meses mi amor 💖</h1>
+    <button onclick="mostrarPantallaPrincipal()">Regalo para el amor de mi vida uwu 💝</button>
+  </div>
+
+  <div class="pantalla-principal">
+    <div class="carta" onclick="abrirCarta()"></div>
+
+    <div class="mensaje">
+      <p>
+        🌸 Mi amor,  
+        Hoy cumplimos 5 meses y no puedo dejar de sonreír al pensar en todo lo que hemos vivido.  
+        Gracias por llenar mis días de ternura, risas y amor.  
+        Eres mi razón favorita para creer en lo bonito de la vida. 
+        No me alcanzo para unas flores reales jsjs perdon mi vida pero te hice esto con mucho cariño, esfuerzo y amor:3 
+        <br><br>
+        💕 Te amo con todo mi corazón, mi Dani. 💕
+      </p>
+    </div>
+
+    <div class="boton-corazon" onclick="window.location.href='canciones.html'">❤️</div>
+  </div>
+
+  <audio id="musica" loop>
+    <source src="amor.mp3" type="audio/mpeg">
+  </audio>
+
+  <script>
+    function mostrarPantallaPrincipal() {
+      document.querySelector('.intro').style.display = 'none';
+      const pantalla = document.querySelector('.pantalla-principal');
+      pantalla.style.display = 'flex';
+
+      document.getElementById('musica').play();
+
+      const flores = ["🌸","🌼","🌹","🌻","🌷"];
+      setInterval(() => {
+        const flor = document.createElement('div');
+        flor.classList.add('flor');
+        flor.textContent = flores[Math.floor(Math.random() * flores.length)];
+        flor.style.left = Math.random() * 100 + "vw";
+        flor.style.animationDuration = (5 + Math.random() * 5) + "s";
+        document.body.appendChild(flor);
+        setTimeout(() => flor.remove(), 10000);
+      }, 400);
+    }
+
+    function abrirCarta() {
+      document.querySelector('.carta').style.display = 'none';
+      document.querySelector('.mensaje').style.display = 'block';
+      document.querySelector('.boton-corazon').style.display = 'block';
+    }
+  </script>
+</body>
+</html>
